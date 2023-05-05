@@ -10,7 +10,7 @@ listener asgardeo:Listener webhookListener =  new(config,httpListener);
 service asgardeo:LoginService on webhookListener {
   
     remote function onLoginSuccess(asgardeo:LoginSuccessEvent event ) returns error? {
-      log:printInfo(event.toJsonString());
+      log:printInfo("onLoginSuccess: " + event.toJsonString());
     }
 }
 
